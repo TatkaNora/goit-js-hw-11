@@ -44,3 +44,44 @@
 .info-value {
   font-size: 12px;
 }
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #f3f3f3;
+  /* світла смуга */
+  border-top: 5px solid #4e75ff;
+  /* кольорова смуга */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+
+  position: fixed;
+  /* по центру екрана */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+
+  position: absolute !important;
+  pointer-events: none;
+
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
